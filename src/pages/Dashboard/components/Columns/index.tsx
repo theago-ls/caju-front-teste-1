@@ -11,6 +11,7 @@ const allColumns = [
 type Props = {
   registrations?: any[];
 };
+
 const Collumns = (props: Props) => {
   return (
     <S.Container>
@@ -38,4 +39,5 @@ const Collumns = (props: Props) => {
     </S.Container>
   );
 };
+
 export default Collumns;

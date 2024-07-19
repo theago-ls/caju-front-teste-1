@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 const registrationStatusStyles: {
   [key in string]: { background: string; title: string };
 } = {
