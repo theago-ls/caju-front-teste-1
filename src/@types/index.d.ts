@@ -1,5 +1,5 @@
 enum STATUS {
-  "APROVED",
+  "APPROVED",
   "REVIEW",
   "REPROVED"
 }
@@ -9,6 +9,6 @@ type Registration = {
   admissionDate: string;
   email: string;
   employeeName: string;
-  status: STATUS;
+  status: keyof typeof STATUS;
   cpf: string;
 }
