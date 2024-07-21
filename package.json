@@ -12,6 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.11",
+    "@types/axios": "^0.14.0",
     "axios": "^1.7.2",
     "json-server": "^1.0.0-beta.1",
     "react": "^18.2.0",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "@nabla/vite-plugin-eslint": "^2.0.4",
+    "@tanstack/react-query-devtools": "^5.51.11",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "13.0.0",
     "@types/jest": "^29.5.12",
