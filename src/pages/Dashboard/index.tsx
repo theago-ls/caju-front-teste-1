@@ -6,6 +6,7 @@ import { SearchBar } from "./components/Searchbar";
 import { getRegistrations } from "~/services";
 import { useState } from "react";
 import { LoadingSpinner } from "~/components";
+import { debounce } from "~/utils";
 
 const DashboardPage = () => {
   const [cpfSearchQuery, setCpfSearchQuery] = useState("");
@@ -24,8 +25,14 @@ const DashboardPage = () => {
     );
   }
 
+  const handleCPFChange = debounce(
+    (value: string) => setCpfSearchQuery(value),
+    700
+  );
+
   return (
     <S.Container>
+      <SearchBar onChange={handleCPFChange} />
       {isLoading ? (
         <S.LoadingContainer>
           <LoadingSpinner />{" "}
