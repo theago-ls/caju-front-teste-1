@@ -6,4 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 50px;
+`;

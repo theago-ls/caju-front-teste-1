@@ -5,11 +5,12 @@ import Collumns from "./components/Columns";
 import { SearchBar } from "./components/Searchbar";
 import { getRegistrations } from "~/services";
 import { useState } from "react";
+import { LoadingSpinner } from "~/components";
 
 const DashboardPage = () => {
   const [cpfSearchQuery, setCpfSearchQuery] = useState("");
 
-  const { data, isError } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ["registrations", cpfSearchQuery],
     queryFn: () => getRegistrations(cpfSearchQuery),
   });
@@ -25,8 +26,13 @@ const DashboardPage = () => {
 
   return (
     <S.Container>
-      <SearchBar />
-      <Collumns registrations={data} />
+      {isLoading ? (
+        <S.LoadingContainer>
+          <LoadingSpinner />{" "}
+        </S.LoadingContainer>
+      ) : (
+        <Collumns registrations={data} />
+      )}
     </S.Container>
   );
 };
