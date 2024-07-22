@@ -18,3 +18,9 @@ export const deleteRegistration = async (registrationID: string): Promise<Regist
 
   return response.data
 }
+
+export const createRegistration = async (registration: Omit<Registration, "id">): Promise<Registration[]> => {
+  const response = await apiProvider.post('/registrations', registration)
+
+  return response.data
+}

@@ -25,9 +25,9 @@ export const IconAndText = styled.div`
 export const Actions = styled.div`
   margin-top: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  gap: 4px;
+  gap: 16px;
 
   svg {
     cursor: pointer;
