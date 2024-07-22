@@ -10,7 +10,7 @@ import {
 } from "~/services";
 import { useState } from "react";
 import { LoadingSpinner } from "~/components";
-import { debounce, STATUS } from "~/utils";
+import { debounce, STATUS, validator } from "~/utils";
 import toast from "react-hot-toast";
 import { useModal } from "~/hooks";
 
@@ -63,10 +63,11 @@ const DashboardPage = () => {
     );
   }
 
-  const handleCPFChange = debounce(
-    (value: string) => setCpfSearchQuery(value),
-    700
-  );
+  const handleCPFChange = debounce((value: string) => {
+    if (validator.cpf(value) || !value) {
+      setCpfSearchQuery(value);
+    }
+  }, 700);
 
   const handleUpdate = (registration: Registration, status: STATUS) => {
     let message = "Você tem certeza que deseja";
