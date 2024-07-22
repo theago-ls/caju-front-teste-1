@@ -1,3 +1,5 @@
 import { SpinnerCircular } from "spinners-react";
 
-export const LoadingSpinner = () => <SpinnerCircular />;
+const LoadingSpinner = () => <SpinnerCircular />;
+
+export default LoadingSpinner;

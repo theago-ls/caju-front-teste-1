@@ -1,4 +1,5 @@
+export { default as LoadingSpinner } from "./LoadingSpinner"
 export { default as Header } from "./Header"
+export { default as ConfirmationDialog } from "./ConfirmationDialog"
 export * from "./Buttons"
 export * from "./TextField"
-export * from "./LoadingSpinner"

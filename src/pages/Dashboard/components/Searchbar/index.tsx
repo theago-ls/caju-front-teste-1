@@ -9,9 +9,10 @@ import { masks } from "~/utils";
 
 type SearchBarProps = {
   onChange: (value: string) => void;
+  onRefreshClick: () => void;
 };
 
-export const SearchBar = ({ onChange }: SearchBarProps) => {
+export const SearchBar = ({ onChange, onRefreshClick }: SearchBarProps) => {
   const [value, setValue] = useState("");
 
   const history = useHistory();
@@ -33,7 +34,7 @@ export const SearchBar = ({ onChange }: SearchBarProps) => {
         onChange={(e) => handleChange(e.target.value)}
       />
       <S.Actions>
-        <IconButton aria-label="refetch">
+        <IconButton aria-label="refetch" onClick={onRefreshClick}>
           <HiRefresh />
         </IconButton>
         <Button onClick={() => goToNewAdmissionPage()}>Nova Admissão</Button>

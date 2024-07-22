@@ -5,3 +5,16 @@ export const getRegistrations = async (cpf?: string): Promise<Registration[]> =>
 
   return response.data
 }
+
+
+export const updateRegistration = async (registration: Registration): Promise<Registration[]> => {
+  const response = await apiProvider.put(`/registrations/${registration.id}`, registration)
+
+  return response.data
+}
+
+export const deleteRegistration = async (registrationID: string): Promise<Registration[]> => {
+  const response = await apiProvider.delete(`/registrations/${registrationID}`)
+
+  return response.data
+}

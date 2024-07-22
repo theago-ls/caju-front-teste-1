@@ -1,14 +1,17 @@
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
+import { STATUS } from "~/utils";
 
 const allColumns = [
-  { status: "REVIEW" as keyof typeof STATUS, title: "Pronto para revisar" },
-  { status: "APPROVED" as keyof typeof STATUS, title: "Aprovado" },
-  { status: "REPROVED" as keyof typeof STATUS, title: "Reprovado" },
+  { status: "REVIEW", title: "Pronto para revisar" },
+  { status: "APPROVED", title: "Aprovado" },
+  { status: "REPROVED", title: "Reprovado" },
 ];
 
 type Props = {
   registrations?: Registration[];
+  onUpdate: (registration: Registration, status: STATUS) => void;
+  onDelete: (registrationID: string) => void;
 };
 
 const Collumns = (props: Props) => {
@@ -30,6 +33,8 @@ const Collumns = (props: Props) => {
                     return (
                       <RegistrationCard
                         data={registration}
+                        onUpdate={props.onUpdate}
+                        onDelete={props.onDelete}
                         key={registration.id}
                       />
                     );

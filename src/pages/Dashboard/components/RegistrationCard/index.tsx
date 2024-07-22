@@ -7,9 +7,12 @@ import {
   HiOutlineCalendar,
   HiOutlineTrash,
 } from "react-icons/hi";
+import { STATUS } from "~/utils";
 
 type Props = {
-  data: any;
+  data: Registration;
+  onUpdate: (registration: Registration, action: STATUS) => void;
+  onDelete: (registrationID: string) => void;
 };
 
 const RegistrationCard = (props: Props) => {
@@ -28,11 +31,34 @@ const RegistrationCard = (props: Props) => {
         <span>{props.data.admissionDate}</span>
       </S.IconAndText>
       <S.Actions>
-        <ButtonSmall bgcolor="rgb(255, 145, 154)" >Reprovar</ButtonSmall>
-        <ButtonSmall bgcolor="rgb(155, 229, 155)">Aprovar</ButtonSmall>
-        <ButtonSmall bgcolor="#ff8858">Revisar novamente</ButtonSmall>
+        {props.data.status === "REVIEW" && (
+          <ButtonSmall
+            bgcolor="rgb(255, 145, 154)"
+            onClick={() => props.onUpdate(props.data, STATUS.REPROVED)}
+          >
+            Reprovar
+          </ButtonSmall>
+        )}
 
-        <HiOutlineTrash />
+        {props.data.status === "REVIEW" && (
+          <ButtonSmall
+            bgcolor="rgb(155, 229, 155)"
+            onClick={() => props.onUpdate(props.data, STATUS.APPROVED)}
+          >
+            Aprovar
+          </ButtonSmall>
+        )}
+
+        {props.data.status !== "REVIEW" && (
+          <ButtonSmall
+            bgcolor="#ff8858"
+            onClick={() => props.onUpdate(props.data, STATUS.REVIEW)}
+          >
+            Revisar novamente
+          </ButtonSmall>
+        )}
+
+        <HiOutlineTrash onClick={() => props.onDelete(props.data.id)} />
       </S.Actions>
     </S.Card>
   );

@@ -1,7 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "react-hot-toast";
 
 import Router from "~/router";
-import { Header } from "./components";
+import { ConfirmationDialog, Header } from "./components";
+import { ModalProvider } from "./contexts";
 
 const queryClient = new QueryClient();
 
@@ -11,7 +13,11 @@ function App() {
       <Header>
         <h1>Caju Front Teste</h1>
       </Header>
-      <Router />
+      <ModalProvider>
+        <Router />
+        <ConfirmationDialog />
+        <Toaster />
+      </ModalProvider>
     </QueryClientProvider>
   );
 }
