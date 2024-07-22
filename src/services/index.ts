@@ -6,7 +6,6 @@ export const getRegistrations = async (cpf?: string): Promise<Registration[]> =>
   return response.data
 }
 
-
 export const updateRegistration = async (registration: Registration): Promise<Registration[]> => {
   const response = await apiProvider.put(`/registrations/${registration.id}`, registration)
 
