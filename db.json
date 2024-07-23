@@ -4,7 +4,7 @@
       "admissionDate": "22/10/2023",
       "email": "luiz@caju.com.br",
       "employeeName": "Luiz Filho",
-      "status": "APPROVED",
+      "status": "REPROVED",
       "cpf": "56642105087",
       "id": "3"
     },
@@ -13,7 +13,7 @@
       "admissionDate": "22/10/2023",
       "email": "filipe@caju.com.br",
       "employeeName": "Filipe Marins",
-      "status": "REVIEW",
+      "status": "REPROVED",
       "cpf": "78502270001"
     },
     {
@@ -23,6 +23,54 @@
       "employeeName": "José Leão",
       "status": "REPROVED",
       "cpf": "78502270001"
+    },
+    {
+      "id": "e9f0",
+      "employeeName": "Cam Mari",
+      "email": "email@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2021",
+      "status": "REPROVED"
+    },
+    {
+      "id": "6869",
+      "employeeName": "Cam Mari",
+      "email": "email@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2021",
+      "status": "APPROVED"
+    },
+    {
+      "id": "06f3",
+      "employeeName": "Cam Mari",
+      "email": "email@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2021",
+      "status": "APPROVED"
+    },
+    {
+      "id": "c992",
+      "employeeName": "Cam Mari",
+      "email": "email@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2021",
+      "status": "REPROVED"
+    },
+    {
+      "id": "d6fe",
+      "employeeName": "Cam Mari",
+      "email": "email@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2021",
+      "status": "REVIEW"
+    },
+    {
+      "id": "aec1",
+      "employeeName": "Teste Teste",
+      "email": "teste@gmail.com",
+      "cpf": "561.804.480-35",
+      "admissionDate": "11/11/2025",
+      "status": "REVIEW"
     }
   ]
 }
